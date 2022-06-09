@@ -15,12 +15,10 @@ public class HelloKryo {
         SomeClass object = new SomeClass();
         object.value = "Hello Kryo!";
 
-        kryo.setReferences(false);
         Output output = new Output(new FileOutputStream("file.bin"));
         kryo.writeObject(output, object);
         output.close();
 
-        kryo.setReferences(true);
         Input input = new Input(new FileInputStream("file.bin"));
         SomeClass object2 = kryo.readObject(input, SomeClass.class);
         input.close();
