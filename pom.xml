@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>kryo-demo</module>
+        <module>java-core</module>
     </modules>
 
     <name>awesome-java-full-demo</name>
