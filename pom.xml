@@ -11,6 +11,7 @@
     <modules>
         <module>kryo-demo</module>
         <module>java-core</module>
+        <module>zookeeper-demo</module>
     </modules>
 
     <name>awesome-java-full-demo</name>
@@ -22,6 +23,12 @@
   </properties>
 
   <dependencies>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.24</version>
+          <scope>compile</scope>
+      </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
