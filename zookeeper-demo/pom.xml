@@ -14,6 +14,7 @@
     <modules>
         <module>zookeeper-raw-api</module>
         <module>zookeeper-curator-demo</module>
+        <module>zookeeper-lock</module>
     </modules>
 
     <properties>

@@ -12,7 +12,6 @@
         <module>kryo-demo</module>
         <module>java-core</module>
         <module>zookeeper-demo</module>
-        <module>zookeeper-curator-demo</module>
     </modules>
 
     <name>awesome-java-full-demo</name>
