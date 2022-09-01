@@ -12,6 +12,7 @@
         <module>kryo-demo</module>
         <module>java-core</module>
         <module>zookeeper-demo</module>
+        <module>error-code-design</module>
     </modules>
 
     <name>awesome-java-full-demo</name>
@@ -33,7 +34,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 
