@@ -26,6 +26,10 @@ public interface ErrorCode {
         return ErrorManager.genCode(this);
     }
 
+    /**
+     * 错误码所属的模块
+     * @return 模块枚举
+     */
     default ProjectModule projectModule(){
         return ErrorManager.projectModule(this);
     }

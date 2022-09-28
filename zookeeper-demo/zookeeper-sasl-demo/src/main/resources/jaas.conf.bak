@@ -1,0 +1,10 @@
+Client {
+       org.apache.zookeeper.server.auth.DigestLoginModule required
+       username="bob"
+       password="bobsecret";
+};
+Client1 {
+       org.apache.zookeeper.server.auth.DigestLoginModule required
+       username="bob"
+       password="bobsecret";
+};
