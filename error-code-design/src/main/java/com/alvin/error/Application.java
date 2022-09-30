@@ -8,7 +8,7 @@ import com.alvin.error.api.ErrorCode;
 /**
  * <p>描 述：</p>
  *
- * @author: cxw (cxw@bsfit.com.cn)
+ * @author: cxw (332059317@qq.com)
  * @date: 2022/9/1  20:46
  * @version: 1.0.0
  */
