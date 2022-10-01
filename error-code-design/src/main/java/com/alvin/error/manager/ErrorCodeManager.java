@@ -17,7 +17,7 @@ import com.google.common.collect.HashBiMap;
  * @author sofn
  * @version 1.0 Created at: 2022-03-10 10:34
  */
-public class ErrorManager {
+public class ErrorCodeManager {
     private static final BiMap<Integer, ErrorCode> GLOBAL_ERROR_CODE_MAP = HashBiMap.create();
     private static final Map<ErrorCode, ProjectModule> ERROR_PROJECT_MODULE_MAP = new ConcurrentHashMap<>();
 

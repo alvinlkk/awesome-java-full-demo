@@ -1,7 +1,7 @@
 package com.alvin.error.api;
 
 
-import com.alvin.error.manager.ErrorManager;
+import com.alvin.error.manager.ErrorCodeManager;
 
 /**
  * @author sofn
@@ -23,10 +23,10 @@ public interface ErrorCode {
      * 拼接project、module、node后的完整的错误码
      */
     default int getCode() {
-        return ErrorManager.genCode(this);
+        return ErrorCodeManager.genCode(this);
     }
 
     default ProjectModule projectModule(){
-        return ErrorManager.projectModule(this);
+        return ErrorCodeManager.projectModule(this);
     }
 }

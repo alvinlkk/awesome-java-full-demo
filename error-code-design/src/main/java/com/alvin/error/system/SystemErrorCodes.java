@@ -1,7 +1,7 @@
 package com.alvin.error.system;
 
 import com.alvin.error.api.ErrorCode;
-import com.alvin.error.manager.ErrorManager;
+import com.alvin.error.manager.ErrorCodeManager;
 
 import lombok.Getter;
 
@@ -23,7 +23,7 @@ public enum SystemErrorCodes implements ErrorCode {
     SystemErrorCodes(int nodeNum, String msg) {
         this.nodeNum = nodeNum;
         this.msg = msg;
-        ErrorManager.register(SystemProjectModule.INSTANCE, this);
+        ErrorCodeManager.register(SystemProjectModule.INSTANCE, this);
     }
 
 }

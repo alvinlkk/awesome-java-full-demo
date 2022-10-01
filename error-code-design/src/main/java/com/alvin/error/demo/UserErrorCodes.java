@@ -1,7 +1,7 @@
 package com.alvin.error.demo;
 
 import com.alvin.error.api.ErrorCode;
-import com.alvin.error.manager.ErrorManager;
+import com.alvin.error.manager.ErrorCodeManager;
 
 import lombok.Getter;
 
@@ -24,6 +24,6 @@ public enum UserErrorCodes implements ErrorCode {
     UserErrorCodes(int nodeNum, String msg) {
         this.nodeNum = nodeNum;
         this.msg = msg;
-        ErrorManager.register(UserProjectCodes.USER, this);
+        ErrorCodeManager.register(UserProjectCodes.USER, this);
     }
 }
