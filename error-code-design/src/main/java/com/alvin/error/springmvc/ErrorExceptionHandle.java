@@ -39,6 +39,7 @@ public class ErrorExceptionHandle {
     @ExceptionHandler(value = Throwable.class)
     public ResponseEntity<Result<?>> processException(HttpServletRequest request, Exception e) {
         Pair<Throwable, String> pair = getExceptionMessage(e);
+        // 如果是自定义异常
         if (e instanceof IErrorCodeException) {
             if (e.getCause() != null) {
                 log.error("error, request: {}", parseParam(request), e.getCause());
@@ -55,6 +56,7 @@ public class ErrorExceptionHandle {
             return new ResponseEntity<>(apiResult, HttpStatus.OK);
         }
         log.error("error, request: {}", parseParam(request), e);
+        // 返回系统异常
         Result<String> errorResult = Result.error(SystemErrorCodes.SYSTEM_ERROR.getCode(), pair.getLeft().getClass().getSimpleName() + ": " + pair.getRight());
         return new ResponseEntity<>(errorResult, HttpStatus.OK);
     }

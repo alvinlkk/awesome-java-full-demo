@@ -9,12 +9,12 @@ import com.alvin.error.manager.ErrorInfo;
  */
 public interface IErrorCodeException {
     /**
-     * 错误信息
+     * 错误信息，获取异常的错误信息
      */
     ErrorInfo getErrorInfo();
 
     /**
-     * 服务+模块信息
+     * 模块信息，获取异常属于哪个模块的
      */
     ProjectModule projectModule();
 }

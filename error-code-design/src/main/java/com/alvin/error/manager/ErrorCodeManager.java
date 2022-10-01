@@ -31,6 +31,7 @@ public class ErrorCodeManager {
         Preconditions.checkArgument(projectModule.getModuleCode() >= 0);
         Preconditions.checkArgument(errorCode.getNodeNum() >= 0);
         int code = genCode(projectModule, errorCode);
+        // 如果存在重复，抛出异常
         Preconditions.checkArgument(!GLOBAL_ERROR_CODE_MAP.containsKey(code), "错误码重复:" + code);
         GLOBAL_ERROR_CODE_MAP.put(code, errorCode);
         ERROR_PROJECT_MODULE_MAP.put(errorCode, projectModule);
