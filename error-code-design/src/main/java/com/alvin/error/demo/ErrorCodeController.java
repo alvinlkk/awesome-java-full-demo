@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alvin.error.manager.ErrorManager;
+import com.alvin.error.manager.ErrorCodeManager;
 import com.alvin.error.manager.TreeNode;
 import com.alvin.error.response.Result;
 
@@ -23,7 +23,7 @@ public class ErrorCodeController {
 
     @GetMapping("/all")
     public Result<List<TreeNode>> listAllErrorCodes() {
-        List<TreeNode> allErrorCodes = ErrorManager.getAllErrorCodes();
+        List<TreeNode> allErrorCodes = ErrorCodeManager.getAllErrorCodes();
         return Result.success(allErrorCodes);
     }
 }

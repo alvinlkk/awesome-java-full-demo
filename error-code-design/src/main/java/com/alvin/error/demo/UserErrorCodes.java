@@ -1,7 +1,7 @@
 package com.alvin.error.demo;
 
 import com.alvin.error.api.ErrorCode;
-import com.alvin.error.manager.ErrorManager;
+import com.alvin.error.manager.ErrorCodeManager;
 
 import lombok.Getter;
 
@@ -30,7 +30,7 @@ public enum UserErrorCodes implements ErrorCode {
         this.nodeNum = nodeNum;
         this.msg = msg;
         // 注册错误码，也就是绑定这个错误码属于哪个模块的
-        ErrorManager.register(UserProjectCodes.USER, this);
+        ErrorCodeManager.register(UserProjectCodes.USER, this);
     }
 
     static {
