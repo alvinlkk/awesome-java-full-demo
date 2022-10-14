@@ -1,4 +1,4 @@
-package cn.com.bsfit.zk;
+package cn.com.alvin.zk;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
