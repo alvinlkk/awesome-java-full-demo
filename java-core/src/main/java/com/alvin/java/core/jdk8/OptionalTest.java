@@ -8,8 +8,6 @@ import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.sun.tools.corba.se.idl.InterfaceGen;
-
 /**
  * 类的描述
  *
