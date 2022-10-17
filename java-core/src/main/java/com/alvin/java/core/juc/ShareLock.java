@@ -19,13 +19,15 @@ public class ShareLock {
      */
     private static class ShareSync extends AbstractQueuedSynchronizer {
 
+        private int lockCount;
+
         /**
          * 创建共享锁帮助类，最多有count把共享锁，超过了则阻塞
          *
          * @param count 共享锁数量
          */
         public ShareSync(int count) {
-            setState(count);
+           this.lockCount = count;
         }
 
         /**
@@ -36,9 +38,19 @@ public class ShareLock {
          */
         @Override
         protected int tryAcquireShared(int arg) {
-            // 如果state=0，表示所有锁都没有了，返回-1，否则正数
-            //return getState() > 0 ? 1 : -1;
-            return  -1;
+            // 自旋
+            for (;;) {
+                int c = getState();
+                // 如果持有锁的数量大于指定数量，返回-1，线程进入阻塞
+                if(c >= lockCount) {
+                    return -1;
+                }
+                int nextc = c + 1;
+                // cas设置成功，返回1，获取到共享锁
+                if (compareAndSetState(c, nextc)) {
+                    return 1;
+                }
+            }
         }
 
         /**
@@ -87,13 +99,13 @@ public class ShareLock {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ShareLock shareLock = new ShareLock(5);
-        for (int i = 0; i < 8; i++) {
+        ShareLock shareLock = new ShareLock(3);
+        for (int i = 0; i < 5; i++) {
             new Thread(() -> {
                 shareLock.lockShare();
                 try {
                     log.info("lock success");
-                    Thread.sleep(50000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
@@ -102,10 +114,7 @@ public class ShareLock {
                 }
 
             }, "thread-" + i).start();
-
-            Thread.sleep(1000);
         }
-
         Thread.sleep(10000);
     }
 }
