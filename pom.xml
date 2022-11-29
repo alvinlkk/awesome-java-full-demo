@@ -13,6 +13,7 @@
         <module>java-core</module>
         <module>zookeeper-demo</module>
         <module>error-code-design</module>
+        <module>refactor</module>
     </modules>
 
     <name>awesome-java-full-demo</name>
