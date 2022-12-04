@@ -7,16 +7,21 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import org.springframework.core.io.support.SpringFactoriesLoader;
+
 import com.alvin.error.api.ErrorCode;
 import com.alvin.error.api.ProjectModule;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author sofn
  * @version 1.0 Created at: 2022-03-10 10:34
  */
+@Slf4j
 public class ErrorCodeManager {
     private static final BiMap<Integer, ErrorCode> GLOBAL_ERROR_CODE_MAP = HashBiMap.create();
     private static final Map<ErrorCode, ProjectModule> ERROR_PROJECT_MODULE_MAP = new ConcurrentHashMap<>();
@@ -86,5 +91,17 @@ public class ErrorCodeManager {
 
     public static ProjectModule projectModule(ErrorCode errorCode) {
         return ERROR_PROJECT_MODULE_MAP.get(errorCode);
+    }
+
+    public static void init() {
+        List<String> results = SpringFactoriesLoader.loadFactoryNames(ErrorCode.class, ErrorCodeManager.class.getClassLoader());
+        for (String result : results) {
+          log.info("********** {}", result);
+            try {
+                Class.forName(result);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

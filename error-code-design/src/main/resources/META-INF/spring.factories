@@ -1,0 +1,4 @@
+#key?????????value???????
+com.alvin.error.spi.Phone=com.alvin.error.spi.Huawei,com.alvin.error.spi.IPhone
+
+com.alvin.error.api.ErrorCode=com.alvin.error.demo.UserErrorCodes,com.alvin.error.system.SystemErrorCodes

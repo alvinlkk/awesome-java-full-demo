@@ -11,11 +11,11 @@ import com.alvin.error.manager.ErrorInfo;
  */
 public class UserException extends BaseRuntimeException {
 
-    protected UserException(String message) {
+    public UserException(String message) {
         super(message);
     }
 
-    protected UserException(String message, Throwable cause) {
+    public UserException(String message, Throwable cause) {
         super(message, cause);
     }
 
