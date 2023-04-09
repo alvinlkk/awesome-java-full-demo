@@ -30,7 +30,7 @@ public class SerialTest {
         // 写到内存中，当然也可以写到文件中
         FileOutputStream bout = new FileOutputStream("user.dat");
         try (ObjectOutputStream out = new ObjectOutputStream(bout)) {
-            // 序列化
+            // 序列化11
             out.writeObject(user);
         } catch (IOException e) {
             e.printStackTrace();
