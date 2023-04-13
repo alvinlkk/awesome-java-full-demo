@@ -14,6 +14,7 @@
         <module>zookeeper-demo</module>
         <module>error-code-design</module>
         <module>refactor</module>
+        <module>hutool-demo</module>
     </modules>
 
     <name>awesome-java-full-demo</name>
