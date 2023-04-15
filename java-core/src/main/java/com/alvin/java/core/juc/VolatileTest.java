@@ -18,33 +18,21 @@ import lombok.extern.slf4j.Slf4j;
 public class VolatileTest {
 
     static boolean run = true;
-    final static Object lock = new Object();
-        final static ReentrantLock reLock = new ReentrantLock();
+
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {
-            while (true) {
-                //reLock.lock();
-                //try {
-                    if(!run) {
-                        break;
-                    }
-                //} finally {
-                //    reLock.unlock();
-                //}
+            while (run) {
                 // do other things
             }
+
             // ?????? 这行会打印吗？
             log.info("done .....");
         });
         t.start();
-        Thread.sleep(1000);
-        // 设置run = false
-        reLock.lock();
-        try {
-            run = false;
-        } finally {
-            reLock.unlock();
-        }
 
+        Thread.sleep(1000);
+
+        // 设置run = false
+        run = false;
     }
 }
