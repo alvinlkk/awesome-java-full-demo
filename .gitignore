@@ -1,3 +1,6 @@
 # Project exclude paths
 /**/target/
 /.idea/
+java-core/user.dat
+error-code-design/src/main/resources/.DS_Store
+java-core/src/main/resources/.DS_Store
