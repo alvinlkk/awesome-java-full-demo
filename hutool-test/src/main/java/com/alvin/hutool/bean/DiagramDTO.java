@@ -1,4 +1,4 @@
-package com.alvin.hutool;
+package com.alvin.hutool.bean;
 
 import lombok.Data;
 import lombok.ToString;
@@ -12,10 +12,12 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class UserDTO {
+public class DiagramDTO {
 
-    private int id;
+    // 前端生产的字符串id
+    private String id;
+
+    private String code;
 
     private String name;
-
 }
