@@ -15,7 +15,8 @@
         <module>data-struct</module>
         <module>sentinel-demo</module>
       <module>juc-order</module>
-  </modules>
+        <module>kafka-demo</module>
+    </modules>
 
     <name>awesome-java-full-demo</name>
   <!-- FIXME change it to the project's website -->
