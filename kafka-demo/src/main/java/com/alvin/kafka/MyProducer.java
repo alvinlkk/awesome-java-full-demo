@@ -5,9 +5,11 @@ package com.alvin.kafka;
 
 import java.util.Properties;
 
+import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.RecordMetadata;
 
 /**
  * 类的描述
@@ -33,7 +35,30 @@ public class MyProducer {
         // 4. 调用 send 方法,发送消息
         for (int i = 0; i < 5; i++) {
             kafkaProducer.send(new
-                    ProducerRecord<>("first",Integer.toString(i), "hello " + i));
+                    ProducerRecord<>("first", Integer.toString(i), "hello " + i));
+            // 发送消息到0号分区
+            kafkaProducer.send(new
+                    ProducerRecord<>("first", 0, Integer.toString(i), "hello " + i));
+            // 同步发送
+//            kafkaProducer.send(new
+//                    ProducerRecord<>("first", Integer.toString(i), "hello " + i)).get();
+        }
+
+        for (int i = 0; i < 5; i++) {
+            kafkaProducer.send(new
+                    ProducerRecord<>("first", Integer.toString(i), "hello " + i), new Callback() {
+                @Override
+                public void onCompletion(RecordMetadata metadata, Exception exception) {
+                    if (exception == null) {
+                        // 没有异常,输出信息到控制台
+                        System.out.println(" 主题： " +
+                                metadata.topic() + "->" + "分区：" + metadata.partition());
+                    } else {
+                        // 出现异常打印
+                        exception.printStackTrace();
+                    }
+                }
+            });
         }
         // 5. 关闭资源
         kafkaProducer.close();
