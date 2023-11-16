@@ -17,10 +17,10 @@ public class SemaphorePool {
     // 1. 连接池大小
     private final int poolSize;
     // 2. 连接对象数组
-    private Connection[] connections;
+    private final Connection[] connections;
     // 3. 连接状态数组 0 表示空闲， 1 表示繁忙
-    private AtomicIntegerArray states;
-    private Semaphore semaphore;
+    private final AtomicIntegerArray states;
+    private final Semaphore semaphore;
 
     // 4. 构造方法初始化
     public SemaphorePool(int poolSize) {

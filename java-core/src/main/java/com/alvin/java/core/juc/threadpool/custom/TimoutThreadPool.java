@@ -19,21 +19,21 @@ public class TimoutThreadPool implements Executor {
     /**
      * 任务队列
      */
-    private TimeoutBlockingQueue<Runnable> taskQueue;
+    private final TimeoutBlockingQueue<Runnable> taskQueue;
 
     /**
      * 核心工作线程数
      */
-    private int coreSize;
+    private final int coreSize;
 
     /**
      * 工作线程集合
      */
-    private Set<Worker> workers = new HashSet<>();
+    private final Set<Worker> workers = new HashSet<>();
 
-    private long timeOut;
+    private final long timeOut;
 
-    private TimeUnit timeUnit;
+    private final TimeUnit timeUnit;
 
     public TimoutThreadPool(int coreSize, int capcity,long timeOut, TimeUnit timeUnit) {
         this.coreSize = coreSize;

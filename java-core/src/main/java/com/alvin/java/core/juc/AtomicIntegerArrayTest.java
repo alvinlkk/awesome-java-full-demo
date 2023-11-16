@@ -30,6 +30,6 @@ public class AtomicIntegerArrayTest {
         t1.start();
         t2.start();
         Thread.sleep(5 * 1000);
-        System.out.println(array.toString());
+        System.out.println(array);
     }
 }

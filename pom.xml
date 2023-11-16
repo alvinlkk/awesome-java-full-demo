@@ -16,6 +16,7 @@
         <module>sentinel-demo</module>
       <module>juc-order</module>
         <module>kafka-demo</module>
+        <module>calcite-demo</module>
     </modules>
 
     <name>awesome-java-full-demo</name>

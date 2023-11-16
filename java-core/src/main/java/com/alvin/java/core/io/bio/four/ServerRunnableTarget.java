@@ -14,7 +14,7 @@ import java.net.Socket;
  * @since 2023/3/19  15:38
  */
 public class ServerRunnableTarget implements Runnable {
-    private Socket socket;
+    private final Socket socket;
 
     public ServerRunnableTarget(Socket socket) {
         this.socket = socket;

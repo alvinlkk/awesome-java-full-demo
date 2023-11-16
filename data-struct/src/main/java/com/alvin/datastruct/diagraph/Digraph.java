@@ -20,7 +20,7 @@ public class Digraph {
     //边的数目
     private int E;
     //邻接表
-    private Queue<Integer>[] adj;
+    private final Queue<Integer>[] adj;
 
     public Digraph(int V){
         //初始化顶点数量

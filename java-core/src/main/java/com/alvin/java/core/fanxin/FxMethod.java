@@ -18,7 +18,7 @@ public class FxMethod {
 
     public <T, U> void showNumber(T t, U u) {
         System.out.println("t = " + t);
-        System.out.println("u = " + u);;
+        System.out.println("u = " + u);
     }
 
     public static void main(String[] args) {

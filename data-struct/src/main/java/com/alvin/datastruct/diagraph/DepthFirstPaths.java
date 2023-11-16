@@ -14,11 +14,11 @@ import java.util.Stack;
  **/
 public class DepthFirstPaths {
     //索引代表顶点，值表示当前顶点是否已经被搜索
-    private boolean[] marked;
+    private final boolean[] marked;
     //起点
-    private int s;
+    private final int s;
     //索引代表顶点，值代表从起点s到当前顶点路径上的最后一个顶点
-    private int[] edgeTo;
+    private final int[] edgeTo;
 
     //构造深度优先搜索对象，使用深度优先搜索找出G图中起点为s的所有路径
     public DepthFirstPaths(Graph G, int s){

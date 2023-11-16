@@ -12,7 +12,7 @@ package com.alvin.datastruct.diagraph;
  **/
 public class DepthFirstSearch {
     //索引代表顶点，值表示当前顶点是否已经被搜索
-    private boolean[] marked;
+    private final boolean[] marked;
     //记录有多少个顶点与s顶点相通
     private int count;
 

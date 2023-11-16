@@ -173,7 +173,7 @@ public enum HttpCodes implements ErrorCode {
     }
 
 
-    public static enum Series {
+    public enum Series {
         INFORMATIONAL(1),
         SUCCESSFUL(2),
         REDIRECTION(3),
@@ -182,7 +182,7 @@ public enum HttpCodes implements ErrorCode {
 
         private final int value;
 
-        private Series(int value) {
+        Series(int value) {
             this.value = value;
         }
 

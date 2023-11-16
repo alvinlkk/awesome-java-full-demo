@@ -28,7 +28,7 @@ public class TpfTest {
 }
 
 class AnimalWrapper<T extends Animal> {
-    private T animal;
+    private final T animal;
 
     AnimalWrapper(T animal) {
         this.animal = animal;

@@ -20,7 +20,7 @@ import sun.misc.Unsafe;
 @Slf4j(topic = "a.AccountCAS")
 public class AccountCAS {
     // 余额
-    private volatile int balance;
+    private final int balance;
     // Unsafe对象
     static final Unsafe unsafe;
     // balance 字段的偏移量

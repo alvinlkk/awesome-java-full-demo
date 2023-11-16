@@ -35,7 +35,7 @@ public class TopoLogicalTest {
         StringBuilder sb = new StringBuilder();
         while (order.size() != 0) {
             sb.append(order.pop()+"->");
-        };
+        }
         String str = sb.toString();
         int index = str.lastIndexOf("->");
         str = str.substring(0,index);

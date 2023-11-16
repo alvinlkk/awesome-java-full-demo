@@ -18,22 +18,22 @@ public class ThreadPool implements Executor {
     /**
      * 任务队列
      */
-    private BlockingQueue<Runnable> taskQueue;
+    private final BlockingQueue<Runnable> taskQueue;
 
     /**
      * 核心工作线程数
      */
-    private int coreSize;
+    private final int coreSize;
 
     /**
      * 工作线程集合
      */
-    private Set<Worker> workers = new HashSet<>();
+    private final Set<Worker> workers = new HashSet<>();
 
     /**
      * 拒绝策略
      */
-    private RejectPolicy rejectPolicy;
+    private final RejectPolicy rejectPolicy;
 
     /**
      *  创建线程池

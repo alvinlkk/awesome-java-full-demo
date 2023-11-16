@@ -8,9 +8,9 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 
 public class CuratorLockTest {
 
-    private String connectString = "10.100.1.14:2181";
+    private final String connectString = "10.100.1.14:2181";
 
-    private String rootNode = "/locks";
+    private final String rootNode = "/locks";
 
     public static void main(String[] args) {
 

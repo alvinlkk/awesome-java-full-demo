@@ -19,7 +19,7 @@ public class Graph {
     //边的数目
     private int E;
     //邻接表,队列的形式
-    private Queue<Integer>[] adj;
+    private final Queue<Integer>[] adj;
 
     public Graph(int V) {
         // 初始化顶点数量

@@ -17,24 +17,24 @@ import lombok.extern.slf4j.Slf4j;
 
 public class DistributedLock {
 
-    private String connectString = "10.100.1.176:2281";
+    private final String connectString = "10.100.1.176:2281";
 
-    private int sessionTimeout = 2000;
+    private final int sessionTimeout = 2000;
 
-    private ZooKeeper zk;
+    private final ZooKeeper zk;
 
-    private String rootNode = "lock";
+    private final String rootNode = "lock";
 
-    private String subNode = "seq-";
+    private final String subNode = "seq-";
 
     private String waitPath;
 
     // 当前client创建的子节点
     private String currentNode;
 
-    private CountDownLatch countDownLatch = new CountDownLatch(1);
+    private final CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    private CountDownLatch waitDownLatch = new CountDownLatch(1);
+    private final CountDownLatch waitDownLatch = new CountDownLatch(1);
 
     public DistributedLock() throws IOException, InterruptedException, KeeperException {
         zk = new ZooKeeper(connectString, sessionTimeout, new Watcher() {

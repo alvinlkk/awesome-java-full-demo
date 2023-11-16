@@ -12,9 +12,9 @@ package com.alvin.java.core.fanxin;
  **/
 public class Point<T extends Number, U extends Number> {
 
-    private T pointX;
+    private final T pointX;
 
-    private U pintY;
+    private final U pintY;
 
     public Point(T pointX, U pintY) {
         pointX.intValue();

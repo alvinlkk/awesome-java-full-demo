@@ -15,11 +15,11 @@ import java.util.Queue;
  **/
 public class BreadthFirstSearch {
     //索引代表顶点，值表示当前顶点是否已经被搜索
-    private boolean[] marked;
+    private final boolean[] marked;
     //记录有多少个顶点与s顶点相通
     private int count;
     //用来存储待搜索邻接表的点
-    private Queue<Integer> waitSearch;
+    private final Queue<Integer> waitSearch;
 
     //构造广度优先搜索对象，使用广度优先搜索找出G图中s顶点的所有相邻顶点
     public BreadthFirstSearch(Graph G, int s) {

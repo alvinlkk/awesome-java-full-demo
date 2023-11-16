@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @since 2023/3/19  15:34
  */
 public class HandlerSocketServerPool {
-    private ExecutorService executorService;
+    private final ExecutorService executorService;
 
     public HandlerSocketServerPool(int maxThradNum, int queueSize) {
         executorService = new ThreadPoolExecutor(2, maxThradNum, 120, TimeUnit.SECONDS,

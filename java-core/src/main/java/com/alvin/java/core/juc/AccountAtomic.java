@@ -21,7 +21,7 @@ import sun.misc.Unsafe;
 @Slf4j(topic = "a.AccountAtomic")
 public class AccountAtomic {
     // 余额
-    private AtomicInteger balance;
+    private final AtomicInteger balance;
 
     public AccountAtomic(Integer balance) {
         this.balance = new AtomicInteger(balance);

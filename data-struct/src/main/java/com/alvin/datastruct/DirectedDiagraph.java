@@ -172,17 +172,17 @@ class CalcTwoVertexPathlgorithm {
     /**
      * 起始顶点
      */
-    private String fromVertexId;
+    private final String fromVertexId;
 
     /**
      * 查询的目标顶点
      */
-    private String toVertextId;
+    private final String toVertextId;
 
     /**
      * 当前的图
      */
-    private DirectedDiagraph directedDiagraph;
+    private final DirectedDiagraph directedDiagraph;
 
     /**
      * 所有的路径

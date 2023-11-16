@@ -18,15 +18,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j(topic = "c.BlockingQueue")
 public class TimeoutBlockingQueue<T> {
     // 容量
-    private int capcity;
+    private final int capcity;
     // 双端任务队列容器
-    private Deque<T> deque = new ArrayDeque<>();
+    private final Deque<T> deque = new ArrayDeque<>();
     // 重入锁
-    private ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
     // 生产者条件变量
-    private Condition fullWaitSet = lock.newCondition();
+    private final Condition fullWaitSet = lock.newCondition();
     // 生产者条件变量
-    private Condition emptyWaitSet = lock.newCondition();
+    private final Condition emptyWaitSet = lock.newCondition();
 
     public TimeoutBlockingQueue(int capcity) {
         this.capcity = capcity;

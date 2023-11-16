@@ -22,6 +22,6 @@ public class AtomicTest {
             }).start();
         }
         Thread.sleep(1000);
-        System.out.println(atomicInteger.get());;
+        System.out.println(atomicInteger.get());
     }
 }

@@ -31,7 +31,7 @@ public class PropertiesTest {
 
         Properties properties2 = new Properties();
         // 使用load read
-        BufferedReader bf = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("app.properties"), "UTF-8"));
+        BufferedReader bf = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("app.properties"), StandardCharsets.UTF_8));
         properties2.load(bf);
         System.out.println(properties2);
     }
@@ -40,7 +40,7 @@ public class PropertiesTest {
     public void test2() throws IOException {
         Properties properties2 = new Properties();
         // 使用load read
-        BufferedReader bf = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("app.properties"), "UTF-8"));
+        BufferedReader bf = new BufferedReader(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream("app.properties"), StandardCharsets.UTF_8));
         properties2.load(bf);
         System.out.println(properties2);
 

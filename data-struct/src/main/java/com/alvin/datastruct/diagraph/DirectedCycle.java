@@ -12,11 +12,11 @@ package com.alvin.datastruct.diagraph;
  **/
 public class DirectedCycle {
     //索引代表顶点，值表示当前顶点是否已经被搜索
-    private boolean[] marked;
+    private final boolean[] marked;
     //记录图中是否有环
     private boolean hasCycle;
     //索引代表顶点，使用栈的思想，记录当前顶点有没有已经处于正在搜索的有向路径上
-    private boolean[] onStack;
+    private final boolean[] onStack;
 
     //创建一个检测环对象，检测图G中是否有环
     public DirectedCycle(Digraph G){

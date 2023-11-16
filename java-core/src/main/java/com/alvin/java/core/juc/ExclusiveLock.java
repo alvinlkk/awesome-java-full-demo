@@ -36,7 +36,7 @@ public class ExclusiveLock implements Lock {
 
             if (getState() == 0) {
                 throw new IllegalMonitorStateException();
-            };
+            }
             //设置抢占锁的线程为null
             setExclusiveOwnerThread(null);
             // 释放锁

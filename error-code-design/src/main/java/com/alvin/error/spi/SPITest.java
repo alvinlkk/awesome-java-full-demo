@@ -25,7 +25,7 @@ public class SPITest {
 
         // 遍历Phone接口实现类实例
         for (Phone spi : spis) {
-            System.out.println(spi.getSystemInfo());;
+            System.out.println(spi.getSystemInfo());
         }
     }
 }

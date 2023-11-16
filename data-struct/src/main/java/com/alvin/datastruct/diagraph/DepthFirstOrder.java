@@ -14,9 +14,9 @@ import java.util.Stack;
  **/
 public class DepthFirstOrder {
     //索引代表顶点，值表示当前顶点是否已经被搜索
-    private boolean[] marked;
+    private final boolean[] marked;
     //使用栈，存储顶点序列
-    private Stack<Integer> reversePost;
+    private final Stack<Integer> reversePost;
 
     //创建一个检测环对象，检测图G中是否有环
     public DepthFirstOrder(Digraph G){

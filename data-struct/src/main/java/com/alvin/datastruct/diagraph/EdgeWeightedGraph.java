@@ -19,7 +19,7 @@ public class EdgeWeightedGraph {
     //边的总数
     private int E;
     //邻接表
-    private Queue<Edge>[] adj;
+    private final Queue<Edge>[] adj;
 
     //创建一个含有V个顶点的空加权无向图
     public EdgeWeightedGraph(int V) {

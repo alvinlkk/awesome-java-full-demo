@@ -19,7 +19,7 @@ public class ShareLock {
      */
     private static class ShareSync extends AbstractQueuedSynchronizer {
 
-        private int lockCount;
+        private final int lockCount;
 
         /**
          * 创建共享锁帮助类，最多有count把共享锁，超过了则阻塞

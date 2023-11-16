@@ -51,9 +51,9 @@ public class SlowRatioCircuitBreakerDemo {
     private static volatile boolean stop = false;
     private static int seconds = 120;
 
-    private static AtomicInteger total = new AtomicInteger();
-    private static AtomicInteger pass = new AtomicInteger();
-    private static AtomicInteger block = new AtomicInteger();
+    private static final AtomicInteger total = new AtomicInteger();
+    private static final AtomicInteger pass = new AtomicInteger();
+    private static final AtomicInteger block = new AtomicInteger();
 
     public static void main(String[] args) throws Exception {
         initDegradeRule();

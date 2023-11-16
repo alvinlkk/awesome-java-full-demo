@@ -18,7 +18,7 @@ import java.util.UUID;
  * @since 2023/3/19  15:20
  */
 public class ServerThreadReader extends Thread {
-    private Socket socket;
+    private final Socket socket;
 
     public ServerThreadReader(Socket socket) {
         this.socket = socket;
@@ -32,7 +32,7 @@ public class ServerThreadReader extends Thread {
             // 读取文件类型
             String suffix = dis.readUTF();
             System.out.println("服务端已经成功接收到了文件类型：" + suffix);
-            OutputStream os = new FileOutputStream("D:\\servers\\" + UUID.randomUUID().toString() + suffix);
+            OutputStream os = new FileOutputStream("D:\\servers\\" + UUID.randomUUID() + suffix);
             byte[] buffer = new byte[1024];
             int len;
             while ((len = dis.read(buffer)) > 0) {

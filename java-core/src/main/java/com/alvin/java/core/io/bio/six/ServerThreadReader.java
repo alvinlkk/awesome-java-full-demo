@@ -19,7 +19,7 @@ import java.util.UUID;
  * @since 2023/3/19  15:20
  */
 public class ServerThreadReader extends Thread {
-    private Socket socket;
+    private final Socket socket;
 
     public ServerThreadReader(Socket socket) {
         this.socket = socket;

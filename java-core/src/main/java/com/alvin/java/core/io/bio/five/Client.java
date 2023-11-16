@@ -18,7 +18,7 @@ public class Client {
     Socket socket;
 
     {
-        try(InputStream is = new FileInputStream("java.png");) {
+        try(InputStream is = new FileInputStream("java.png")) {
             socket = new Socket("127.0.0.1", 9000);
             // 把字节输出流包装程一个数据输出流
             DataOutputStream dos = new DataOutputStream(socket.getOutputStream());

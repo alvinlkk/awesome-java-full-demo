@@ -12,15 +12,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RunnableWrapper implements Runnable {
     // 实际要执行的线程任务
-    private Runnable task;
+    private final Runnable task;
     // 线程任务被创建出来的时间
-    private long createTime;
+    private final long createTime;
     // 线程任务被线程池运行的开始时间
     private long startTime;
     // 线程任务被线程池运行的结束时间
     private long endTime;
     // 线程信息
-    private String taskInfo;
+    private final String taskInfo;
 
     private boolean showWaitLog;
 
